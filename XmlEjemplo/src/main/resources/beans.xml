@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="personaDao" class="dao.PersonaDaoImpl" init-method="init" destroy-method="destroy"></bean>
+	
+	<bean id="personaServicioImpl" class="servicio.PersonaServicioImpl">
+		<property name="personaDao" ref="personaDao"></property>
+	</bean>
+	
+	
+	
+	
+	<!-- propiedades de etiqueta bean -->
+	<!-- init-method: el bean usara el metodo despues de iniciar el bean, con ese nombre si lo desean -->
+	<!-- destroy-method: el bean usara el metodo antes de destruir el bean, con ese nombre si lo desean -->
+	<!-- scope="singleton": se crea una intancia compartida de la clase,  se inyectara siempre la misma instancia, es el ambito por defecto de un bean-->
+	<!-- scope="prototype":  se crea una instancia diferente cada vez que se hace una petición-->
+
+</beans>

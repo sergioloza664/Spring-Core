@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd"> 
+	
+	
+	<!--  
+	<bean id="personaDao" class="dao.PersonaDaoImpl" primary="true"></bean>	
+	<bean id="personaServicioImpl" class="servicio.PersonaServicioImpl" ></bean>	
+	-->
+	
+	
+	
+	
+	<context:annotation-config/>
+	
+	<context:component-scan base-package="dao"/>
+	<context:component-scan base-package="servicio"/>
+
+	
+
+	
+	
+	
+	<!-- propiedades de etiqueta beans -->
+	<!-- context:annotation-config: necesario para utilizar las anotaciones de spring core -->
+	
+	<!-- propiedades de etiqueta bean -->
+	<!-- primary: con varios beans de la misma clase al estar en true, este sera el primero en ser inyectado-->
+	
+	<!-- context:component-scan base-package: con esto nos ahorramos tener que especificar los beans, ponemos la ruta de los beans en las comillas,
+		 las clases que deban de ser beans deberan estar anotadas con @Component,  etc-->
+	
+	
+</beans>

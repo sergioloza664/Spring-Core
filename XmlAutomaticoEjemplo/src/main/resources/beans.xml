@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	
+	default-init-method="init" default-destroy-method="destroy"> 
+	
+
+	
+	<bean id="personaDao" class="dao.PersonaDaoImpl" primary="true" autowire-candidate="true"></bean>
+	
+	
+	<bean id="personaServicioImpl" class="servicio.PersonaServicioImpl" autowire="byType">
+		
+	</bean>
+	
+	
+	<!-- propiedades de etiqueta beans -->
+	<!-- default-init-method: todos los beans usaran el metodo despues de iniciar el bean, con ese nombre si lo desean -->
+	<!-- default-destroy-method: todos los beans usaran el metodo antes de destruir el bean, con ese nombre si lo desean -->
+	
+	<!-- propiedades de etiqueta bean -->
+	<!-- primary: con varios beans de la misma clase al estar en true, este sera el primero en ser inyectado-->
+	<!-- autowired-candidate: si el bean es candidato para ser autoinyectado -->
+	
+	<!-- autowired: forma en como se hara el autoinyectado -->
+
+</beans>
